@@ -1,0 +1,77 @@
+# This .gitignore file is configured for Unity projects
+
+# Unity generated
+/[Ll]ibrary/
+/[Tt]emp/
+/[Oo]bj/
+/[Bb]uild/
+/[Bb]uilds/
+/[Ll]ogs/
+/[Uu]ser[Ss]ettings/
+
+# MemoryCaptures can be useful for debugging memory-related issues
+/[Mm]emoryCaptures/
+
+# Asset meta data should be included (except for files covered by Git LFS)
+!/[Aa]ssets/**/*.meta
+
+# Unity3D generated file on crash reports
+sysinfo.txt
+
+# Visual Studio / Rider / MonoDevelop generated
+.vs/
+.idea/
+.gradle/
+ExportedObj/
+.consulo/
+*.csproj
+*.unityproj
+*.sln
+*.suo
+*.tmp
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+*.pdb
+*.mdb
+*.opendb
+*.VC.db
+
+# Unity3D generated meta files
+*.pidb.meta
+*.pdb.meta
+*.mdb.meta
+
+# Unity3D generated crash reports
+crash_report.txt
+
+# Builds
+*.apk
+*.aab
+*.unitypackage
+*.app
+
+# Crashlytics generated file
+crashlytics-build.properties
+
+# OS generated
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Icon?
+ehthumbs.db
+Thumbs.db
+
+# Project specific
+/Assets/Plugins/Editor/JetBrains*
+
+# Optional: Visual Studio Code configuration
+.vscode/
+*.code-workspace
+
+# Optional: Exclude specific Unity folders for version control
+# /Assets/AssetStoreTools*
