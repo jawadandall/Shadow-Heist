@@ -1,0 +1,62 @@
+# Shadow Heist URP and 2D Lighting Conversion Steps
+
+After adding the necessary scripts to the project, follow these steps to complete the URP and 2D lighting setup:
+
+## Step 1: Install URP Package
+1. In Unity, open Window > Package Manager
+2. Click the + button and select "Add package by name"
+3. Enter "com.unity.render-pipelines.universal" and click Add
+
+## Step 2: Configure URP Settings
+1. In Project Settings > Graphics, assign the UniversalRP asset from the Settings folder
+2. In Project Settings > Quality, set the Rendering Pipeline Asset to UniversalRP 
+
+## Step 3: Convert Materials
+1. Go to Edit > Render Pipeline > Universal Render Pipeline > Upgrade Project Materials
+2. Click "Proceed" to convert all materials to URP compatible versions
+
+## Step 4: Add 2D Lighting Components
+For each light in the scene:
+1. Select the light object (Light1, Light2, Light3, Light4)
+2. Add the "Light 2D" component (Component > Rendering > 2D > Light 2D)
+3. Set the Light Type to "Point"
+4. Set the Outer Radius to match the original light range (9 units)
+5. Set the Inner Radius to half the outer radius
+6. Enable shadows by checking the "Cast Shadows" option
+7. Disable the original Light component
+
+## Step 5: Add Shadow Casters
+For objects that should cast shadows:
+1. Select wall objects, obstacles, and props
+2. Add the "Shadow Caster 2D" component (Component > Rendering > 2D > Shadow Caster 2D)
+3. Adjust the shadow shape if needed
+
+## Step 6: Configure Player for Shadow Detection
+1. Add the ShadowDetector script to the Player
+2. Set the Shadow Layers to include walls and obstacles
+3. Enable "Show Debug Rays" during testing
+
+## Step 7: Configure Light Switch
+1. Add the LightSwitch script to the LightSwitch object
+2. Assign Light3's Light2D component as the target light
+3. Set the interaction range to 1.5 units
+
+## Step 8: Create Global Light
+1. Create a new GameObject named "Global Light"
+2. Add a Light 2D component
+3. Set the Light Type to "Global"
+4. Set a low intensity (0.2-0.3) to provide ambient illumination
+5. Set a dark color tint
+
+## Step 9: Create UI for Visibility Meter
+1. Create a Canvas for UI elements
+2. Add a panel with a fill image for the visibility meter
+3. Attach the VisibilityMeter script and reference the player's ShadowDetector
+
+## Step 10: Test the Scene
+1. Enter Play mode and test shadow detection
+2. Verify that the player becomes invisible in shadows
+3. Test the light switch interaction
+4. Adjust light and shadow settings as needed
+
+These manual steps can be automated once all scripts are properly compiled and recognized by Unity.
